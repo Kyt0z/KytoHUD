@@ -1,0 +1,90 @@
+ui_kyto_armor_show 3
+0 - widget hidden on death and in race
+1 - widget visible on death
+2 - widget visible in race
+3 - widget visible on death and in race
+
+ui_kyto_deathMessages_background 65
+0 - no background frame
+n - background frame with alpha n
+
+ui_kyto_deathMessages_debug 0
+0 - debug-mode off
+1 - draw fake data (this is useful for positioning the widget)
+
+ui_kyto_fragMessage_flag_offset_y 2.0
+n - offset flag's y-position by n
+
+ui_kyto_fragMessage_override_country ""
+xy - override victim's country (cl_country xy)
+
+ui_kyto_fragMessage_override_name ""
+xyzzy - override victim's name (name xyzzy)
+
+ui_kyto_fragMessage_override_reset 0
+1 - reset victim override cvars
+
+ui_kyto_gameTimer_reset_warmup 0
+1 - reset elapsed warmup time
+
+ui_kyto_health_show 3
+0 - widget hidden on death and in race
+1 - widget visible on death
+2 - widget visible in race
+3 - widget visible on death and in race
+
+ui_kyto_powerups_background 65
+0 - no background frame
+n - background frame with alpha n
+
+ui_kyto_powerups_debug 0
+0 - debug-mode off
+1 - draw fake data (this is useful for positioning the widget)
+
+ui_kyto_powerups_show 3
+0 - widget hidden on death and in race
+1 - widget visible on death
+2 - widget visible in race
+3 - widget visible on death and in race
+
+ui_kyto_verticalBar_show 3
+0 - widget hidden on death and in race
+1 - widget visible on death
+2 - widget visible in race
+3 - widget visible on death and in race
+
+ui_kyto_teamInfo_name_max_length 100
+-1 - no max length for names
+ n - max length for names is n HUD-units
+
+ui_kyto_pickupFlash_clear 0
+1 - clears the screen (useful in replays)
+
+ui_kyto_toasty_toasty 0
+1 - TOASTYYY!
+
+ui_kyto_weaponAccuracies_background 65
+0 - no background frame
+n - background frame with alpha n
+
+ui_kyto_weaponList_show 3
+0 - widget hidden on death and in race
+1 - widget visible on death
+2 - widget visible in race
+3 - widget visible on death and in race
+
+ui_kyto_weaponSwitch_empty 0
+0 - do nothing
+1 - play a sound if unable to switch to melee
+2 - play a sound if unable to switch to burstgun
+3 - play a sound if unable to switch to shotgun
+4 - play a sound if unable to switch to grenadelauncher
+5 - play a sound if unable to switch to plasmagun
+6 - play a sound if unable to switch to rocketlauncher
+7 - play a sound if unable to switch to ioncannon
+8 - play a sound if unable to switch to boltrifle
+9 - play a sound if unable to switch to stakelauncher
+(Use this on your weapon binds: bind game g weapon 5; ui_kyto_weaponSwitch_empty 5)
+
+ui_kytohud_set_default
+1 - set all widgets to default positions
