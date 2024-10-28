@@ -842,14 +842,14 @@ local function drawDeathMessage(message, messageNum, messageNumTotal, messageTim
    local highlightColor
    if message.hasCarnage and message.hasResist then
       highlightColor = Color(
-         lerp(KytoHUD.userData.carnageColor.r, KytoHud.userData.resistColor.r, 0.5),
-         lerp(KytoHUD.userData.carnageColor.g, KytoHud.userData.resistColor.g, 0.5),
-         lerp(KytoHUD.userData.carnageColor.b, KytoHud.userData.resistColor.b, 0.5)
+         lerp(KytoHUD.userData.carnageColor.r, KytoHUD.userData.resistColor.r, 0.5),
+         lerp(KytoHUD.userData.carnageColor.g, KytoHUD.userData.resistColor.g, 0.5),
+         lerp(KytoHUD.userData.carnageColor.b, KytoHUD.userData.resistColor.b, 0.5)
       )
    elseif message.hasCarnage then
       highlightColor = kyto_copyColor(KytoHUD.userData.carnageColor, intensity)
    elseif message.hasResist then
-      highlightColor = kyto_copyColor(KytoHud.userData.resistColor, intensity)
+      highlightColor = kyto_copyColor(KytoHUD.userData.resistColor, intensity)
    end
    drawBackground(x, y, deathMessageWidth, deathMessageHeight, alpha, intensity, highlightColor)
 
@@ -2548,7 +2548,7 @@ function kyto_pickupTimers:draw()
             iconColor = KytoHUD.userData.carnageColor
          elseif vType == PICKUP_TYPE_POWERUPRESIST then
             iconSvg = 'internal/ui/icons/resist'
-            iconColor = KytoHud.userData.resistColor
+            iconColor = KytoHUD.userData.resistColor
          end
 
          if outlineIcon then
@@ -2773,7 +2773,7 @@ function kyto_powerups:draw()
          drawPowerup(x, y, powerupWidth, powerupHeight, KytoHUD.userData.carnageColor, 'carnage', powerupTimeRemaining[n], outlineIcon, outlineText)
          y = y + powerupHeight + powerupSpacing
       elseif n == 2 and hasResist then
-         drawPowerup(x, y, powerupWidth, powerupHeight, KytoHud.userData.resistColor, 'resist', powerupTimeRemaining[n], outlineIcon, outlineText)
+         drawPowerup(x, y, powerupWidth, powerupHeight, KytoHUD.userData.resistColor, 'resist', powerupTimeRemaining[n], outlineIcon, outlineText)
          y = y + powerupHeight + powerupSpacing
       elseif n == 3 and hasMegaHealth then
          drawPowerup(x, y, powerupWidth, powerupHeight, KytoHUD.userData.megaColor, 'health', powerupTimeRemaining[n], outlineIcon, outlineText)
@@ -3179,14 +3179,14 @@ function kyto_teamInfo:draw()
          if highlightNamesOnPowerup then
             if teamInfo_carnageTable[pIndex].has and teamInfo_resistTable[pIndex].has then
                fontColor = Color(
-                  lerp(KytoHUD.userData.carnageColor.r, KytoHud.userData.resistColor.r, 0.5),
-                  lerp(KytoHUD.userData.carnageColor.g, KytoHud.userData.resistColor.g, 0.5),
-                  lerp(KytoHUD.userData.carnageColor.b, KytoHud.userData.resistColor.b, 0.5)
+                  lerp(KytoHUD.userData.carnageColor.r, KytoHUD.userData.resistColor.r, 0.5),
+                  lerp(KytoHUD.userData.carnageColor.g, KytoHUD.userData.resistColor.g, 0.5),
+                  lerp(KytoHUD.userData.carnageColor.b, KytoHUD.userData.resistColor.b, 0.5)
                )
             elseif teamInfo_carnageTable[pIndex].has then
                fontColor = Color(KytoHUD.userData.carnageColor.r, KytoHUD.userData.carnageColor.g, KytoHUD.userData.carnageColor.b)
             elseif teamInfo_resistTable[pIndex].has then
-               fontColor = Color(KytoHud.userData.resistColor.r, KytoHud.userData.resistColor.g, KytoHud.userData.resistColor.b)
+               fontColor = Color(KytoHUD.userData.resistColor.r, KytoHUD.userData.resistColor.g, KytoHUD.userData.resistColor.b)
             end
          end
          if pHealth <= 0 then
@@ -3316,7 +3316,7 @@ function kyto_teamInfo:draw()
             drawColumnDelimiter(lineX - (columnInnerSpacing / 2), columnDelimiterY, columnDelimiterHeight, delimiterColor)
 
             if kyto_bitAnd(drawPowerup, 1) then
-               iconColor = Color(KytoHud.userData.resistColor.r, KytoHud.userData.resistColor.g, KytoHud.userData.resistColor.b)
+               iconColor = Color(KytoHUD.userData.resistColor.r, KytoHUD.userData.resistColor.g, KytoHUD.userData.resistColor.b)
                iconSvg = 'internal/ui/icons/resist'
 
                lineX = lineX + iconRadius
@@ -3379,7 +3379,7 @@ function kyto_teamInfo:draw()
                   end
 
                   if powerupTimeColor then
-                     fontColor = Color(KytoHud.userData.resistColor.r, KytoHud.userData.resistColor.g, KytoHud.userData.resistColor.b)
+                     fontColor = Color(KytoHUD.userData.resistColor.r, KytoHUD.userData.resistColor.g, KytoHUD.userData.resistColor.b)
                   end
                else
                   powerupTimeRemaining = '-'
