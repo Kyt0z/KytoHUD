@@ -2831,43 +2831,29 @@ function kyto_scores:draw()
    nvgFontFace(kyto_scores_font)
    nvgTextAlign(NVG_ALIGN_CENTER, NVG_ALIGN_TOP)
 
-   local activePlayers = {}
-   for _, p in ipairs(players) do
-      if p.state == PLAYER_STATE_INGAME and p.connected then
-         table.insert(activePlayers, p)
-      end
-   end
-
-   local teamScore = 0
-   local enemyScore = 0
+   local teamScore = nil
+   local enemyScore = nil
 
    local gameMode = gamemodes[world.gameModeIndex].shortName
-   if gameMode == 'ctf' then
+   if gamemodes[world.gameModeIndex].hasTeams then
       teamScore = world.teams[player.team].score
       enemyScore = world.teams[player.team % 2 + 1].score
-   elseif gameMode == '1v1' or gameMode == 'tdm' or gameMode == '2v2' then
+   elseif gameMode == '1v1' or gameMode == 'ffa' then
       teamScore = player.score
-      for _, activePlayer in ipairs(activePlayers) do
-         if player ~= activePlayer then
-            enemyScore = enemyScore + activePlayer.score
+       for _, p in ipairs(players) do
+         if p.connected and p.state == PLAYER_STATE_INGAME and p.index ~= player.index then
+            enemyScore = enemyScore ~= nil and math.max(p.score, enemyScore) or p.score
          end
       end
-   elseif gameMode == 'ffa' then
-      teamScore = player.score
-      local greatestEnemyScore = 0
-      for _, activePlayer in ipairs(activePlayers) do
-         if player ~= activePlayer and greatestEnemyScore < activePlayer.score then
-            greatestEnemyScore = activePlayer.score
-            enemyScore = activePlayer.score
-         end
-      end
+      if enemyScore == nil then enemyScore = 0 end
    elseif gameMode == 'race' then
-      return -- TODO
+      return -- TODO (no I won't lol)
    elseif gameMode == 'training' then
-      return -- TODO
+      return -- TODO (no I won't lol)
    else
       return
    end
+
    local diffScore = teamScore - enemyScore
 
    local scoreHeight = 32
